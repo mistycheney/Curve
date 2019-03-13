@@ -147,6 +147,7 @@ export default class Home extends Component {
                          updateList={(data, callback) => this.updateList(data, callback)}
                          uploadingProcess={percent => this.uploadingProcess(percent)}
                          showLoading={this.showLoading}
+                         hideLoading={this.hideLoading}
                          toggleContainerOverlay={this.toggleContainerOverlay}
                          deleteData={(name, dialogConfig) => this.deleteData(name, dialogConfig)}
                          foldMenu={this.state.foldMenu}
@@ -187,7 +188,8 @@ export default class Home extends Component {
                     height: overlayHeight + 'px',
                     left: '200px'
                 }} onClick={isShow => this.toggleContainerOverlay(false)}></div>
-                <Dialog ref="dialog"></Dialog>
+                //<Dialog ref="dialog"></Dialog>
+		<Dialog showLoading={this.showLoading} hideLoading={this.hideLoading} ref="dialog"></Dialog>
                 <MessageTip ref="messageTip"></MessageTip>
             </div>
         );
